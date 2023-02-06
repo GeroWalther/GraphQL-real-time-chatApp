@@ -9,10 +9,12 @@ const httpLink = new HttpLink({
   uri: "http://localhost:9000/graphql",
 });
 
-const wsLink = new GraphQLWsLink(createWsClient, {
-  uri: "ws://localhost:9000/graphql",
-  connectionParams: () => ({ accessToken: getAccessToken() }),
-});
+const wsLink = new GraphQLWsLink(
+  createWsClient({
+    url: "ws://localhost:9000/graphql",
+    connectionParams: () => ({ accessToken: getAccessToken() }),
+  })
+);
 
 function isSubscription({ query }) {
   const definition = getMainDefinition(query);
