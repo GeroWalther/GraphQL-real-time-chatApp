@@ -1,5 +1,6 @@
 import { makeExecutableSchema } from "@graphql-tools/schema";
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@apollo/server/express4";
 import cors from "cors";
 import express from "express";
 import { expressjwt } from "express-jwt";
@@ -36,9 +37,17 @@ app.post("/login", async (req, res) => {
   }
 });
 
-function getContext({ req }) {
+function getHttpContext({ req }) {
   if (req.auth) {
     return { userId: req.auth.sub };
+  }
+  return {};
+}
+function getWsContext({ connectionParams }) {
+  const token = connectionParams?.accessToken;
+  if (token) {
+    const payload = jwt.verify(token, JWT_SECRET);
+    return { userId: payload.sub };
   }
   return {};
 }
@@ -48,14 +57,18 @@ const wsServer = new WebSocketServer({ server: httpServer, path: "/graphql" });
 
 const typeDefs = await readFile("./schema.graphql", "utf8");
 const schema = makeExecutableSchema({ typeDefs, resolvers });
-useWSServer({ schema }, wsServer);
+
+useWSServer({ schema, context: getWsContext }, wsServer);
 
 const apolloServer = new ApolloServer({
   schema,
-  context: getContext,
 });
 await apolloServer.start();
-apolloServer.applyMiddleware({ app, path: "/graphql" });
+
+app.use(
+  "/graphql",
+  expressMiddleware(apolloServer, { context: getHttpContext })
+);
 
 httpServer.listen({ port: PORT }, () => {
   console.log(`Server running on port ${PORT}`);
