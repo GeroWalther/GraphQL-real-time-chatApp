@@ -1,0 +1,87 @@
+[
+  {
+    "id": "SJKhIAKYB",
+    "from": "system",
+    "text": "Welcome!"
+  },
+  {
+    "id": "dMxwE0eFqYNntJGJDTUTJ",
+    "from": "alice",
+    "text": "Hi"
+  },
+  {
+    "id": "BXlOJQftW_czprwNEWFxv",
+    "from": "alice",
+    "text": "again"
+  },
+  {
+    "id": "5Il9hSE6Cu7ahmkPSmStz",
+    "from": "alice",
+    "text": "Hi"
+  },
+  {
+    "id": "VDZW5pTrqQvdDvOSJoCXx",
+    "from": "alice",
+    "text": "ping"
+  },
+  {
+    "id": "iYd6947F7rWLf0xMMuj4G",
+    "from": "alice",
+    "text": "ping"
+  },
+  {
+    "id": "st5zObnsAqtH2MZMRB1kC",
+    "from": "alice",
+    "text": "2"
+  },
+  {
+    "id": "GSg34vKmjU-9aULTYP2NA",
+    "from": "alice",
+    "text": "blup"
+  },
+  {
+    "id": "u4BCYkQfI3VPvwP8mqQ9I",
+    "from": "charlie",
+    "text": "gha"
+  },
+  {
+    "id": "wrEoksJRNS2e-FVwDPuKl",
+    "from": "bob",
+    "text": "jkas"
+  },
+  {
+    "id": "4jO1XoMURLlc0beyUfnIw",
+    "from": "alice",
+    "text": "hilo"
+  },
+  {
+    "id": "W_JunVNwLboK-sCFVLop5",
+    "from": "alice",
+    "text": "55"
+  },
+  {
+    "id": "pYtaCwdBczepaZ04Dmx4C",
+    "from": "alice",
+    "text": "henmlo"
+  },
+  {
+    "id": "Pt2OPcr5wIsyRgNZXYoM2",
+    "from": "alice",
+    "text": "77"
+  },
+  {
+    "id": "08ctVKw1ISvxmn4VPtAev",
+    "from": "alice",
+    "text": "bla"
+  },
+  {
+    "id": "AYSyN25f6E_Vpb_jxKpuK",
+    "from": "alice",
+    "text": "ok"
+  },
+  {
+    "id": "xLO_8AeG16g8dBXEPQzkZ",
+    "from": "charlie",
+    "text": "not"
+  }
+]
